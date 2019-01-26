@@ -28,18 +28,18 @@ const requestHandler = (req, res) => {
             });
         });
     }
-    if(url === 'users'){
+    if(url === '/users'){
         res.write('<html>');
         res.write('<head><title>User Page</title></head>');
-        res.write('<body><form action="/message" method="POST"><input type="text" name="message"><button type="submit">send</button></form></body>');
+        res.write('<body>hello user</body>');
         res.write('</html>');
+        return res.end();
     }
-    res.setHeader('Content-Type', 'text/html');
 };
 
 // module.exports = {
 //     handler: requestHandler,
 //     someText: 'Some hard coded text'
 // };
-
-// module.exports.handler = requestHandler;
+module.exports.someText = 'hello world';
+module.exports.handler = requestHandler;
